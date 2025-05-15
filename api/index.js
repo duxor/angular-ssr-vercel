@@ -8,12 +8,17 @@ const fs = require('fs');
 // Define the path to the Angular SSR server
 const serverDistPath = '../angular-ssr-vercel/server/server.mjs';
 const serverDistPath2 = path.join(process.cwd(), 'angular-ssr-vercel/server/server.mjs');
+const serverDistPath3 = 'angular-ssr-vercel/server/server.mjs';
 
 // Export a handler function for Vercel
 module.exports = async (req, res) => {
   try {
     // Check if the server file exists
-    if (!fs.existsSync(serverDistPath) && !fs.existsSync(serverDistPath2)) {
+    if (
+      !fs.existsSync(serverDistPath) &&
+      !fs.existsSync(serverDistPath2) &&
+      !fs.existsSync(serverDistPath3)
+    ) {
       console.error(`Server file not found at: ${serverDistPath}`);
       return res.status(500).send(`[1] Server file not found ${serverDistPath} ${serverDistPath2}`);
     }

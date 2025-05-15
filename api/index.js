@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
     }
 
     // Use the app to handle the request
-    return app;
+    return app(req, res);
   } catch (error) {
     console.error('Error handling request:', error);
     return res.status(500).send('Internal Server Error');

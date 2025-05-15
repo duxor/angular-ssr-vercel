@@ -35,10 +35,9 @@ module.exports = async (req, res) => {
 
     // Dynamically import the server module (it's an ESM module)
     const serverModule = await import(serverDistPath);
-    const serverModule2 = await import(serverDistPath);
 
     // Get the app from the server module
-    const app = serverModule.app || serverModule2.app;
+    const app = serverModule.app;
 
     // If app is not available, return an error
     if (!app) {

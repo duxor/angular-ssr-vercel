@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Define the path to the Angular SSR server
-const serverDistPath = path.join(process.cwd(), 'dist/angular-ssr-vercel/server/main.server.mjs');
+const serverDistPath = '../dist/angular-ssr-vercel/server/server.mjs';
 
 // Export a handler function for Vercel
 module.exports = async (req, res) => {
@@ -36,7 +36,6 @@ module.exports = async (req, res) => {
       console.error('Server app not found in the imported module');
       console.log('Server module:', serverDistPath);
       console.log('Server dir:', serverDistPath);
-      return import(serverDistPath).then(module => module.app());
       return res.status(500).send(`[2] Server app not found ${serverDistPath}`);
     }
 

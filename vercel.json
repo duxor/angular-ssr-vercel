@@ -2,14 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/angular-ssr-vercel/server/server.mjs",
+      "src": "api/index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "dist/angular-ssr-vercel/server/server.mjs"
+      "dest": "/api/index.js"
     }
   ],
   "buildCommand": "npm run build",

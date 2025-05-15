@@ -11,7 +11,6 @@
     "vercel-build": "ng build"
   },
   "private": true,
-  "type": "module",
   "dependencies": {
     "@angular/animations": "^19.2.10",
     "@angular/common": "^19.2.10",

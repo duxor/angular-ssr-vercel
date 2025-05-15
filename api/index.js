@@ -2,14 +2,14 @@
 // It imports the Angular SSR server and handles requests
 
 // Import required modules
-import path from 'path';
-import fs from 'fs';
+const path = require('path');
+const fs = require('fs');
 
 // Define the path to the Angular SSR server
 const serverDistPath = path.join(process.cwd(), 'dist/angular-ssr-vercel/server/server.mjs');
 
 // Export a handler function for Vercel
-export default async (req, res) => {
+module.exports = async (req, res) => {
   try {
     fs.readdir('./', (err, files) => {
       const fileList = [];
@@ -40,7 +40,7 @@ export default async (req, res) => {
     }
 
     // Use the app to handle the request
-    return app(req, res);
+    return app;
   } catch (error) {
     console.error('Error handling request:', error);
     return res.status(500).send('Internal Server Error');

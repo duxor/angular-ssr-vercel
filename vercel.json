@@ -1,7 +1,7 @@
 {
   "version": 2,
   "public": true,
-  "name": "angular-vercel-ssr",
+  "name": "angular-ssr-vercel",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -10,7 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/angular-vercel-ssr/**"
+      "includeFiles": "dist/angular-ssr-vercel/**"
     }
   }
 }

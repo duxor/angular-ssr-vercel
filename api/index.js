@@ -36,6 +36,7 @@ module.exports = async (req, res) => {
       console.error('Server app not found in the imported module');
       console.log('Server module:', serverDistPath);
       console.log('Server dir:', serverDistPath);
+      return import(serverDistPath).then(module => module.app());
       return res.status(500).send(`[2] Server app not found ${serverDistPath}`);
     }
 

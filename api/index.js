@@ -9,6 +9,9 @@ const fs = require('fs');
 const serverDistPath = '../angular-ssr-vercel/server/server.mjs';
 const serverDistPath2 = path.join(process.cwd(), 'angular-ssr-vercel/server/server.mjs');
 const serverDistPath3 = 'angular-ssr-vercel/server/server.mjs';
+const serverDistPath4 = '/angular-ssr-vercel/server/server.mjs';
+const serverDistPath5 = 'dist/angular-ssr-vercel/server/server.mjs';
+const serverDistPath6 = '../dist/angular-ssr-vercel/server/server.mjs';
 
 // Export a handler function for Vercel
 module.exports = async (req, res) => {
@@ -20,7 +23,7 @@ module.exports = async (req, res) => {
       !fs.existsSync(serverDistPath3)
     ) {
       console.error(`Server file not found at: ${serverDistPath}`);
-      return res.status(500).send(`[1] Server file not found ${serverDistPath} ${serverDistPath2}`);
+      return res.status(500).send(`[1] Server file not found<br />${serverDistPath} <br />${serverDistPath2} <br />${serverDistPath3} <br />${serverDistPath4} <br />${serverDistPath5} <br />${serverDistPath6}`);
     }
 
     // Dynamically import the server module (it's an ESM module)

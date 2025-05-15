@@ -1,59 +1,86 @@
-# AngularSsrVercel
+# Lumina - Interactive Digital Art Gallery
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0-rc.2.
+![Lumina Logo](https://via.placeholder.com/150x50?text=Lumina)
 
-## Development server
+## 🌟 Overview
 
-To start a local development server, run:
+Lumina is an immersive digital art gallery that showcases interactive artwork from emerging and established digital artists. Built with Angular and Server-Side Rendering (SSR), Lumina delivers lightning-fast performance and optimal SEO, ensuring that art is discoverable and loads instantly for visitors.
 
-```bash
-ng serve
-```
+The application demonstrates how to properly configure Angular SSR for Vercel deployment, providing a seamless development and production experience.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- **Immersive Art Exploration**: Browse through curated collections of digital artwork with smooth transitions and animations
+- **Artist Spotlights**: Learn about featured artists and their creative processes
+- **Server-Side Rendering**: Optimized for performance and SEO with Angular SSR
+- **Responsive Design**: Beautiful experience across all devices and screen sizes
+- **Lazy-Loaded Modules**: Efficient code-splitting for optimal performance
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Live Demo
 
-```bash
-ng generate component component-name
-```
+Visit the live application: [https://lumina-gallery.vercel.app](https://lumina-gallery.vercel.app)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Technical Stack
 
-```bash
-ng generate --help
-```
+- **Angular 19**: Latest version with standalone components
+- **Angular SSR**: Server-side rendering for improved performance and SEO
+- **Vercel Deployment**: Optimized for Vercel's edge network
+- **Responsive Design**: Mobile-first approach with modern CSS
 
-## Building
+## 🔧 Development
 
-To build the project run:
+### Prerequisites
 
-```bash
-ng build
-```
+- Node.js (v18 or later)
+- npm (v9 or later)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Installation
 
 ```bash
-ng test
+# Clone the repository
+git clone https://github.com/yourusername/lumina-gallery.git
+
+# Navigate to the project directory
+cd lumina-gallery
+
+# Install dependencies
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Development Server
 
 ```bash
-ng e2e
+# Start the development server
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Additional Resources
+### Building for Production
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+# Build the application for production
+npm run build
+```
+
+### Testing SSR Locally
+
+```bash
+# Build and serve with SSR locally
+npm run build
+npm run serve:ssr:angular-ssr-vercel
+```
+
+## 📦 Deployment to Vercel
+
+This project is configured for seamless deployment to Vercel. Simply connect your GitHub repository to Vercel, and it will automatically detect the Angular configuration and deploy with SSR enabled.
+
+## 📚 Learning Resources
+
+- [Angular Documentation](https://angular.dev)
+- [Angular SSR Guide](https://angular.dev/guide/ssr)
+- [Vercel Documentation](https://vercel.com/docs)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

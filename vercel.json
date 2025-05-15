@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/angular-ssr-vercel/server/server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/angular-ssr-vercel/server/server.mjs"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/angular-ssr-vercel/browser"
+}

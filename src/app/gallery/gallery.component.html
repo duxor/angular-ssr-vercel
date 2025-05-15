@@ -1,0 +1,24 @@
+<div class="gallery-container">
+  <header class="gallery-header">
+    <h1>Explore Digital Art</h1>
+    <p class="gallery-description">
+      Discover captivating digital artwork from talented artists around the world. Each piece tells a unique story through innovative digital techniques.
+    </p>
+  </header>
+
+  <div class="artwork-grid">
+    @for (artwork of artworks; track artwork.id) {
+      <div class="artwork-card">
+        <div class="artwork-image-container">
+          <img [src]="artwork.imageUrl" [alt]="artwork.title" class="artwork-image">
+        </div>
+        <div class="artwork-details">
+          <h2 class="artwork-title">{{ artwork.title }}</h2>
+          <p class="artwork-artist">by {{ artwork.artist }}</p>
+          <p class="artwork-description">{{ artwork.description }}</p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

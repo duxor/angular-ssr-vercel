@@ -1,0 +1,245 @@
+.artists-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.artists-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.artists-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #a56bff, #6b6bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.artists-description {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #444;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #a56bff, transparent);
+}
+
+/* Featured Artists Section */
+.featured-artists {
+  margin-bottom: 4rem;
+}
+
+.featured-artists-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.artist-spotlight-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.artist-image-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.artist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artist-spotlight-card:hover .artist-image {
+  transform: scale(1.05);
+}
+
+.artist-spotlight-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-name {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.artist-specialty {
+  font-size: 1rem;
+  color: #a56bff;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.artist-bio {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.view-portfolio-btn {
+  background: linear-gradient(90deg, #a56bff, #6b6bff);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.view-portfolio-btn:hover {
+  background: linear-gradient(90deg, #9456ff, #5a5aff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(107, 107, 255, 0.3);
+}
+
+/* All Artists Section */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.artist-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.artist-card-image-container {
+  height: 250px;
+  overflow: hidden;
+}
+
+.artist-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-card-image {
+  transform: scale(1.05);
+}
+
+.artist-card-content {
+  padding: 1.5rem;
+}
+
+.artist-card-name {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.artist-card-specialty {
+  font-size: 0.9rem;
+  color: #a56bff;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.artist-card-btn {
+  background: transparent;
+  color: #6b6bff;
+  border: 2px solid #6b6bff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.artist-card-btn:hover {
+  background: #6b6bff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .artist-spotlight-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .artist-image-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artists-header h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .artists-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .artists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .artist-card-image-container {
+    height: 200px;
+  }
+}

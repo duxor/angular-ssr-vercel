@@ -1,6 +1,6 @@
 # Lumina - Interactive Digital Art Gallery
 
-![Lumina Logo](https://via.placeholder.com/150x50?text=Lumina)
+**✨ LUMINA ✨** - *Where Digital Art Comes to Life*
 
 ## 🌟 Overview
 

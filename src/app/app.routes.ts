@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Lumina - Featured Artists'
   },
   {
+    path: 'not-implemented',
+    loadComponent: () => import('./not-implemented/not-implemented.component').then(m => m.NotImplementedComponent),
+    title: 'Lumina - Coming Soon'
+  },
+  {
     path: '**',
     redirectTo: '/gallery'
   }

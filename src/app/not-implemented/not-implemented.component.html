@@ -1,0 +1,29 @@
+<div class="not-implemented-container">
+  <div class="content-wrapper">
+    <div class="feature-coming-soon">
+      <div class="animated-gradient"></div>
+      <h1 class="title">Feature Coming Soon</h1>
+      <p class="description">
+        We're working hard to bring this feature to life. Our team of digital artists and developers
+        are crafting something extraordinary for you.
+      </p>
+      <div class="timeline">
+        <div class="timeline-marker">
+          <span class="date">Today</span>
+          <div class="dot current"></div>
+          <span class="status">In Development</span>
+        </div>
+        <div class="timeline-line"></div>
+        <div class="timeline-marker">
+          <span class="date">{{ estimatedReleaseDate | date:'MMMM yyyy' }}</span>
+          <div class="dot future"></div>
+          <span class="status">Estimated Release</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a routerLink="/gallery" class="btn primary">Return to Gallery</a>
+        <a routerLink="/artists" class="btn secondary">Explore Artists</a>
+      </div>
+    </div>
+  </div>
+</div>

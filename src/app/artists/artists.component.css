@@ -78,15 +78,55 @@
   overflow: hidden;
 }
 
-.artist-image {
+.artist-gradient {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.5s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.artist-spotlight-card:hover .artist-image {
+.artist-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.artist-spotlight-card:hover .artist-gradient {
   transform: scale(1.05);
+}
+
+.artist-spotlight-card:hover .artist-gradient::before {
+  opacity: 1;
+}
+
+.artist-name-overlay {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.artist-spotlight-card:hover .artist-name-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .artist-spotlight-content {
@@ -125,6 +165,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .view-portfolio-btn:hover {
@@ -158,15 +201,55 @@
   overflow: hidden;
 }
 
-.artist-card-image {
+.artist-card-gradient {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.5s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.artist-card:hover .artist-card-image {
+.artist-card-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.artist-card:hover .artist-card-gradient {
   transform: scale(1.05);
+}
+
+.artist-card:hover .artist-card-gradient::before {
+  opacity: 1;
+}
+
+.artist-card-name-overlay {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.artist-card:hover .artist-card-name-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .artist-card-content {
@@ -196,6 +279,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .artist-card-btn:hover {
@@ -209,7 +295,7 @@
   .artist-spotlight-card {
     grid-template-columns: 1fr;
   }
-  
+
   .artist-image-container {
     height: 300px;
   }
@@ -219,11 +305,11 @@
   .artists-header h1 {
     font-size: 2rem;
   }
-  
+
   .section-title {
     font-size: 1.5rem;
   }
-  
+
   .artists-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
@@ -234,11 +320,11 @@
   .artists-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .artists-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .artist-card-image-container {
     height: 200px;
   }

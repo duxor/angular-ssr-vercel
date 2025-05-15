@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-artists',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './artists.component.html',
   styleUrls: ['./artists.component.css']
 })
@@ -14,7 +15,8 @@ export class ArtistsComponent {
       id: 1,
       name: 'Elena Bright',
       specialty: 'Abstract Digital Landscapes',
-      imageUrl: 'https://via.placeholder.com/300x300?text=Elena+Bright',
+      gradientColors: ['#FF6B6B', '#4ECDC4'],
+      gradientDirection: '135deg',
       bio: 'Elena creates immersive digital landscapes that blend reality with imagination. Her work has been featured in digital exhibitions worldwide.',
       featured: true
     },
@@ -22,7 +24,8 @@ export class ArtistsComponent {
       id: 2,
       name: 'Marcus Wave',
       specialty: 'Neon Urban Art',
-      imageUrl: 'https://via.placeholder.com/300x300?text=Marcus+Wave',
+      gradientColors: ['#6B6BFF', '#FF6B6B'],
+      gradientDirection: '45deg',
       bio: 'Inspired by cyberpunk aesthetics, Marcus specializes in vibrant neon cityscapes that capture the energy of urban environments.',
       featured: true
     },
@@ -30,7 +33,8 @@ export class ArtistsComponent {
       id: 3,
       name: 'Sophia Quantum',
       specialty: 'Quantum Visualization',
-      imageUrl: 'https://via.placeholder.com/300x300?text=Sophia+Quantum',
+      gradientColors: ['#A56BFF', '#6BFFDB'],
+      gradientDirection: '90deg',
       bio: 'With a background in physics, Sophia creates art that visualizes quantum phenomena in beautiful and accessible ways.',
       featured: false
     },
@@ -38,7 +42,8 @@ export class ArtistsComponent {
       id: 4,
       name: 'Leo Pattern',
       specialty: 'Fractal Art',
-      imageUrl: 'https://via.placeholder.com/300x300?text=Leo+Pattern',
+      gradientColors: ['#6BFF9E', '#FFDB6B'],
+      gradientDirection: '180deg',
       bio: 'Leo explores the infinite complexity of fractals, creating mesmerizing patterns that reveal the mathematical beauty of nature.',
       featured: true
     }

@@ -10,13 +10,16 @@
     @for (artwork of artworks; track artwork.id) {
       <div class="artwork-card">
         <div class="artwork-image-container">
-          <img [src]="artwork.imageUrl" [alt]="artwork.title" class="artwork-image">
+          <div class="artwork-gradient" 
+               [style.background]="'linear-gradient(' + artwork.gradientDirection + ', ' + artwork.gradientColors[0] + ', ' + artwork.gradientColors[1] + ')'">
+            <div class="artwork-title-overlay">{{ artwork.title }}</div>
+          </div>
         </div>
         <div class="artwork-details">
           <h2 class="artwork-title">{{ artwork.title }}</h2>
           <p class="artwork-artist">by {{ artwork.artist }}</p>
           <p class="artwork-description">{{ artwork.description }}</p>
-          <button class="view-details-btn">View Details</button>
+          <a routerLink="/not-implemented" class="view-details-btn">View Details</a>
         </div>
       </div>
     }

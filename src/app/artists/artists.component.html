@@ -8,18 +8,21 @@
 
   <section class="featured-artists">
     <h2 class="section-title">Artist Spotlights</h2>
-    
+
     <div class="featured-artists-grid">
       @for (artist of featuredArtists; track artist.id) {
         <div class="artist-spotlight-card">
           <div class="artist-image-container">
-            <img [src]="artist.imageUrl" [alt]="artist.name" class="artist-image">
+            <div class="artist-gradient" 
+                 [style.background]="'linear-gradient(' + artist.gradientDirection + ', ' + artist.gradientColors[0] + ', ' + artist.gradientColors[1] + ')'">
+              <div class="artist-name-overlay">{{ artist.name }}</div>
+            </div>
           </div>
           <div class="artist-spotlight-content">
             <h3 class="artist-name">{{ artist.name }}</h3>
             <p class="artist-specialty">{{ artist.specialty }}</p>
             <p class="artist-bio">{{ artist.bio }}</p>
-            <button class="view-portfolio-btn">View Portfolio</button>
+            <a routerLink="/not-implemented" class="view-portfolio-btn">View Portfolio</a>
           </div>
         </div>
       }
@@ -28,17 +31,20 @@
 
   <section class="all-artists">
     <h2 class="section-title">All Artists</h2>
-    
+
     <div class="artists-grid">
       @for (artist of artists; track artist.id) {
         <div class="artist-card">
           <div class="artist-card-image-container">
-            <img [src]="artist.imageUrl" [alt]="artist.name" class="artist-card-image">
+            <div class="artist-card-gradient" 
+                 [style.background]="'linear-gradient(' + artist.gradientDirection + ', ' + artist.gradientColors[0] + ', ' + artist.gradientColors[1] + ')'">
+              <div class="artist-card-name-overlay">{{ artist.name }}</div>
+            </div>
           </div>
           <div class="artist-card-content">
             <h3 class="artist-card-name">{{ artist.name }}</h3>
             <p class="artist-card-specialty">{{ artist.specialty }}</p>
-            <button class="artist-card-btn">View Details</button>
+            <a routerLink="/not-implemented" class="artist-card-btn">View Details</a>
           </div>
         </div>
       }

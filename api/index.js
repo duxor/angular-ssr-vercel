@@ -5,7 +5,7 @@
 const fs = require('fs');
 
 // Define the path to the Angular SSR server
-const serverDistPath = '../dist/angular-ssr-vercel/server/server.mjs';
+const serverDistPath = '../angular-ssr-vercel/server/server.mjs';
 
 // Export a handler function for Vercel
 module.exports = async (req, res) => {

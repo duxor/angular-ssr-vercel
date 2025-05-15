@@ -5,28 +5,28 @@
 const path = require('path');
 const fs = require('fs');
 
-fs.readdir('./', (err, files) => {
-  const fileList = [];
-  files.forEach(file => {
-    fileList.push(file);
-  });
-  console.log('Current directory files:', fileList);
-});
-
-fs.readdir('../', (err, files) => {
-  const fileList = [];
-  files.forEach(file => {
-    fileList.push(file);
-  });
-  console.log('Current directory files:', fileList);
-});
-
 // Define the path to the Angular SSR server
 const serverDistPath = path.join(process.cwd(), 'dist/angular-ssr-vercel/server/server.mjs');
 
 // Export a handler function for Vercel
 module.exports = async (req, res) => {
   try {
+    const fileList = [];
+    const file2List = [];
+    fs.readdir('./', (err, files) => {
+      files.forEach(file => {
+        fileList.push(file);
+      });
+      console.log('Current directory files:', fileList);
+    });
+
+    fs.readdir('../', (err, files) => {
+      files.forEach(file => {
+        file2List.push(file);
+      });
+      console.log('Current directory files:', file2List);
+    });
+
     // Check if the server file exists
     if (!fs.existsSync(serverDistPath)) {
       console.error(`Server file not found at: ${serverDistPath}`);

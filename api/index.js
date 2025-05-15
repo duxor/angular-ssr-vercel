@@ -50,4 +50,4 @@
 //   }
 // };
 
-export default import('/dist/angular-ssr-vercel/server/server.mjs').then(module => module.app());
+export default import('../server.mjs').then(module => module.app());

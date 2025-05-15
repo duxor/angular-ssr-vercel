@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
     // Check if the server file exists
     if (!fs.existsSync(serverDistPath) && !fs.existsSync(serverDistPath2)) {
       console.error(`Server file not found at: ${serverDistPath}`);
-      return res.status(500).send(`Server file not found ${serverDistPath} ${serverDistPath2}`);
+      return res.status(500).send(`[1] Server file not found ${serverDistPath} ${serverDistPath2}`);
     }
 
     // Dynamically import the server module (it's an ESM module)
@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
       console.log('Server module:', serverDistPath);
       console.log('Server dir:', serverDistPath);
       console.log('Server dir:', serverDistPath2);
-      return res.status(500).send('Server app not found');
+      return res.status(500).send(`[2] Server app not found ${serverDistPath} ${serverDistPath2}`);
     }
 
     // Use the app to handle the request

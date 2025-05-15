@@ -1,23 +1,16 @@
 {
   "version": 2,
-  "builds": [
+  "public": true,
+  "name": "angular-vercel-ssr",
+  "rewrites": [
     {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/angular-vercel-ssr/**"
     }
-  ]
+  }
 }

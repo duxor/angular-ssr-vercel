@@ -10,7 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/angular-ssr-vercel/server/**"
+      "includeFiles": "dist/angular-ssr-vercel/**"
     }
   }
 }

@@ -1,13 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: '/gallery', 
-    pathMatch: 'full' 
-  },
   {
-    path: 'gallery',
+    path: '',
+    pathMatch: 'full',
     loadComponent: () => import('./gallery/gallery.component').then(m => m.GalleryComponent),
     title: 'Lumina - Explore Digital Art'
   },
@@ -23,6 +19,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/gallery'
+    redirectTo: '/not-implemented',
   }
 ];

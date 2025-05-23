@@ -1,17 +1,16 @@
 {
   "version": 2,
-  "builds": [
+  "public": true,
+  "name": "angular-ssr-vercel",
+  "rewrites": [
     {
-      "src": "dist/angular-ssr-vercel/server/server.mjs",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/angular-ssr-vercel/server/server.mjs"
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/angular-ssr-vercel/**"
     }
-  ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/angular-ssr-vercel/browser"
+  }
 }

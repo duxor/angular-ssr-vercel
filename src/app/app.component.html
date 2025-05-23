@@ -2,7 +2,7 @@
   <header class="app-header">
     <div class="header-content">
       <div class="logo-container">
-        <a routerLink="/gallery" class="logo">
+        <a routerLink="/" class="logo">
           <span class="logo-text">Lumina</span>
           <span class="logo-tagline">Digital Art Gallery</span>
         </a>
@@ -10,10 +10,10 @@
       <nav class="main-nav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a routerLink="/gallery" routerLinkActive="active" class="nav-link">Gallery</a>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Gallery</a>
           </li>
           <li class="nav-item">
-            <a routerLink="/artists" routerLinkActive="active" class="nav-link">Artists</a>
+            <a routerLink="/artists" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Artists</a>
           </li>
         </ul>
       </nav>

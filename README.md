@@ -18,7 +18,7 @@ The application demonstrates how to properly configure Angular SSR for Vercel de
 
 ## 🚀 Live Demo
 
-Visit the live application: [https://lumina-gallery.vercel.app](https://lumina-gallery.vercel.app)
+Visit the live application: [https://angular-ssr-vercel-ruby.vercel.app](https://angular-ssr-vercel-ruby.vercel.app)
 
 ## 🛠️ Technical Stack
 
@@ -73,7 +73,70 @@ npm run serve:ssr:angular-ssr-vercel
 
 ## 📦 Deployment to Vercel
 
-This project is configured for seamless deployment to Vercel. Simply connect your GitHub repository to Vercel, and it will automatically detect the Angular configuration and deploy with SSR enabled.
+To deploy this application with SSR enabled on Vercel, follow these steps:
+
+1. **Rename index.html file**:
+   - Rename your `src/index.html` to something like `src/indexFile.html` (or any other name)
+
+2. **Update angular.json**:
+   - Change the `index` property in your `angular.json` to point to the renamed file:
+   ```json
+   "index": "src/indexFile.html",
+   ```
+
+3. **Add vercel.json**:
+   - Create a `vercel.json` file in the root of your project with the following content:
+   ```json
+   {
+     "version": 2,
+     "public": true,
+     "name": "angular-ssr-vercel",
+     "rewrites": [
+       { "source": "/(.*)", "destination": "/api" }
+     ],
+     "functions": {
+       "api/index.js": {
+         "includeFiles": "dist/angular-ssr-vercel/**"
+       }
+     }
+   }
+   ```
+
+4. **Export app variable in src/server.ts**:
+   - Make sure the Express app is exported in your `src/server.ts` file:
+   ```typescript
+   // Change from:
+   const app = express();
+
+   // To:
+   export const app = express();
+   ```
+   - This export is required for the api/index.js file to properly import the app
+
+5. **Create api/index.js**:
+   - Create an `api` directory in the root of your project
+   - Create an `index.js` file inside the `api` directory with the following content:
+   ```javascript
+   // This file serves as the entry point for Vercel's serverless function
+   // It imports the Angular SSR server and handles requests
+
+   // Import required modules
+   const path = require('path');
+
+   const serverDistPath = path.join(process.cwd(), 'dist/angular-ssr-vercel/server/server.mjs');
+
+   export default import(serverDistPath).then(module => module.app);
+   ```
+
+6. **Deploy to Vercel**:
+   - Connect your GitHub repository to Vercel
+   - Select "Angular" as the framework preset
+   - No additional configuration is needed in the Vercel dashboard
+   - Deploy your application
+
+The project is now configured for seamless deployment with SSR enabled on Vercel.
+
+> **Note**: If you encounter any issues or have questions about the deployment process, please open an issue in the repository for assistance.
 
 ## 📚 Learning Resources
 

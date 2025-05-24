@@ -66,10 +66,11 @@ npm run build
 ### Testing SSR Locally
 
 ```bash
-# Build and serve with SSR locally
+# Build the application with SSR support
 npm run build
-npm run serve:ssr:angular-ssr-vercel
 ```
+
+> **Note**: The command to serve SSR locally has been removed. Please refer to the [Angular SSR Guide](https://angular.dev/guide/ssr) for the latest instructions on testing SSR locally.
 
 ## 📦 Deployment to Vercel
 

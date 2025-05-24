@@ -2,12 +2,12 @@
   "version": 2,
   "public": true,
   "name": "angular-ssr-vercel",
-  "routes": [
-    { "src": "/(.*)", "dest": "api/index.js" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api" }
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/angular-ssr-vercel/browser/**"
+      "includeFiles": "dist/angular-ssr-vercel/**"
     }
   }
 }
